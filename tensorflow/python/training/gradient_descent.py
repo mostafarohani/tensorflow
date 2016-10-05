@@ -44,10 +44,11 @@ class GradientDescentOptimizer(optimizer.Optimizer):
     self._learning_rate = learning_rate
 
   def _apply_dense(self, grad, var):
+    new_grad = 
     return training_ops.apply_gradient_descent(
         var,
         math_ops.cast(self._learning_rate_tensor, var.dtype.base_dtype),
-        grad,
+        new_grad,
         use_locking=self._use_locking).op
 
   def _apply_sparse(self, grad, var):
